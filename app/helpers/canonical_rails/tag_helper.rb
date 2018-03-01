@@ -1,7 +1,8 @@
 module CanonicalRails
   module TagHelper
     def trailing_slash_needed?
-      request.params.key?('action') && CanonicalRails.sym_collection_actions.include?(request.params['action'].to_sym)
+      # that prevents canonical that ends with slash character
+      false
     end
 
     def trailing_slash_if_needed
